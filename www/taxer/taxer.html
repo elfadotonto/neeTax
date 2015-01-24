@@ -1,0 +1,87 @@
+<div class="col-md-7" id="buttonPane" ng-hide="print || confirm">
+    <div id="up" class="upDownPane">&nbsp;</div>
+        <div class="btn-group-vertical">
+            <button id="btn_acu" class="btn" ng-disabled="!isStarted || acu" ng-click="addAcu()">Akupunktur</button>
+            <button id="btn_n2o" class="btn" ng-disabled="!isStarted" ng-click="addN2O()">Lystgass</button>
+            <button id="btn_para" class="btn" ng-disabled="!isStarted" ng-click="addPara()">Paralgin major</button>
+        </div>
+        <div class="btn-group-vertical">
+            <button id="btn_epi" class="btn" ng-disabled="!isStarted || epidural" ng-click="confirmEpidural()">Epidural</button>
+            <button id="btn_oxy" class="btn" ng-disabled="!isStarted" ng-click="addOxy()">Ri-stimulerende</button>
+            <button id="btn_fluids" class="btn" ng-disabled="!isStarted" ng-click="confirmFluids()">V&aelig;sketilf&oslash;rsel</button>
+        </div>
+        <div class="btn-group-vertical">
+            <button id="btn_sucction" class="btn" ng-disabled="!isStarted || sucction" ng-click="confirmSucction()">Sugekopp</button>
+            <button id="btn_tub" class="btn" ng-disabled="!isStarted || tub" ng-click="addTub()"><span>Badekar</span></button>
+            <button id="btn_ctg" class="btn" ng-disabled="!isStarted || ctg" ng-click="addCTG()">CTG</button>
+        </div>
+    <div id="down" class="upDownPane">&nbsp;</div>
+</div>
+<div class="col-md-7" id="confirmPane" ng-show="confirm">
+    <div class="upDownPane">&nbsp;</div>
+    <div class="tabPadding">
+        <img src="css/img/varsel.svg" />
+        <h3 ng-bind="confirmData.header"></h3>
+        <h4 ng-bind="confirmData.cost"></h4>
+        <p ng-bind="confirmData.msg"></p>
+        <p ng-bind="confirmData.question"></p>
+        <div class="btn-group-s">
+            <button id="confirmOK" class="btn btn-success" ng-bind="confirmData.ok" ng-click="okConfirm()"></button>
+            <button class="btn btn-danger" ng-bind="confirmData.cancel" ng-show="confirmData.cancel" ng-click="cancelConfirm()"></button>
+        </div>
+    </div>
+</div>
+<div class="col-md-7 ng-cloak" id="tabPane" ng-cloak ng-show="print">
+    <div class="upDownPane">&nbsp;</div>
+    <div class="tabPadding">
+        <table>
+            <tr><td colspan="2">Pasientnr: <span ng-bind="pid"></span></td></tr>
+            <tr><td ng-bind="tabDate | date: 'dd.MM.yyyy'"></td><td class="price" ng-bind="tabExtra"></td></tr>
+            <tr><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td><span>Tidsbruk </span>(<span ng-bind="elapsedTime | utc | date: 'H:mm:ss'"></span>)</td>
+                <td class="price" ng-bind="totalRunning | customCurrency: '':',':' ':'0'"></td>
+            </tr>
+            <tr ng-repeat="item in tab.items">
+                <td ng-bind="item.name"></td>
+                <td class="price" ng-bind="item.price | customCurrency: '':',':' ':'0'"></td>
+            </tr>
+            <tr class="subTotal">
+                <td>Subtotal</td>
+                <td class="price" ng-bind="currentTax | customCurrency: '':',':' ':'0'"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="tabButtons">
+        <button class="btn btn-success" ng-click="closeTab()">Bekreft bel&oslash;p</button>
+    </div>
+</div>
+<div class="col-md-5">
+    <div id="topPane" class="btn-group-s upDownPane">
+        <button id="btn_night" class="btn" ng-disabled="!isStarted" ng-click="toggleNight()">&nbsp;</button>
+        <button id="btn_weekend" class="btn" ng-disabled="!isStarted" ng-click="toggleWeekend()">&nbsp;</button>
+        <button id="btn_hour" class="btn" ng-disabled="!isStarted" ng-click="addHour()">&nbsp;</button>
+    </div>
+    <div class="resultPane">
+        <div ng-bind="priceFlash" id="priceFlash" class="col-md-6 fade"></div>
+        <div class="col-md-6">
+            <h3>Pris p&aring;l&oslash;pt</h3>
+        </div>
+        <div ng-bind="currentTax | customCurrency: '':',':' ':'0'" class="counter"></div>
+    </div>
+    <div class="resultPane">
+        <div class="col-md-6">&nbsp;</div>
+        <div class="col-md-6">
+            <h3>Tid p&aring;l&oslash;pt</h3>
+        </div>
+        <div ng-bind="elapsedTime | utc | date: 'H:mm:ss'" class="counter"></div>
+    </div>
+    <div id="runPane">
+        <button class="btn btn-success" ng-hide="isStarted" ng-click="startTax()">START</button>
+        <button class="btn btn-danger" ng-show="isStarted" ng-click="stopTax()">STOPP</button>
+        <div class="btn-group-vertical">
+            <button id="reset" class="btn btn-small" ng-click="endTax()">&nbsp;</button>
+            <button id="print" class="btn btn-small" ng-disabled="isStarted" ng-click="printTab()">&nbsp;</button>
+        </div>
+    </div>
+</div>

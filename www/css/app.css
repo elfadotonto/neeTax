@@ -1,0 +1,195 @@
+/* app css stylesheet */
+body{
+    background: #C1DDE9;
+    font-family: Lato, Calibri,sans-serif;
+}
+body > div{
+    margin-top: 1em;
+}
+button {
+    background: #D4EEF6;
+}
+
+#buttonPane {
+    margin: 0 auto;
+}
+#buttonPane div.btn-group-vertical{
+    margin: 0 0.2em;
+}
+
+#buttonPane .btn {
+    font-size: 1.5em;
+    height: 140px;
+    margin: 0 0.5em 0.5em;
+    background-color: #D4EEF6;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 95px;
+    padding-top: 90px;
+}
+#runPane .btn{
+    margin: 0.5em 2em 0.5em 0;
+}
+
+#topPane .btn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15%;
+    float: right;
+    margin: 0.5em 2em 0.5em 0;
+}
+
+#btn_night { background-image: url(img/natt.svg)}
+#btn_weekend { background-image: url(img/helg.svg)}
+#btn_hour { background-image: url(img/pluss1.svg)}
+
+#btn_tub{ background-image: url(img/badekar.svg)}
+#btn_acu{ background-image: url(img/akupunktur.svg)}
+#btn_epi{ background-image: url(img/epuidural.svg) }
+#btn_n2o{ background-image: url(img/lystgass.svg)  }
+#btn_para{ background-image: url(img/paralgin.svg)}
+#btn_oxy{ background-image: url(img/ristimulerende.svg) }
+#btn_sucction{ background-image: url(img/sugekopp.svg) }
+#btn_fluids{ background-image: url(img/vaeske.svg) }
+#btn_ctg{background-image: url(img/ctg.svg)}
+
+.upDownPane {
+    margin: 0.5em 1em;
+    padding: 0;
+    height: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#up:hover,
+#up:focus {
+    background-color: #D4EEF6;
+}
+#down:hover,
+#down:focus {
+    background-color: #D4EEF6;
+}
+
+#up { background-image: url(img/opp.svg);}
+#down {
+    background-image: url(img/ned.svg);
+    margin: 0 1em;
+}
+
+#runPane div {
+    margin-top: 8px;
+}
+#runPane div button{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 55px auto;
+}
+
+#reset { background-image: url(img/nullut.svg)}
+#print { background-image: url(img/print.svg)}
+
+#runPane .btn-success,
+#runPane .btn-danger{
+    font-size: 1.5em;
+    line-height: 2;
+    padding: 1em 1.5em;
+}
+
+.resultPane {
+    display: block;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #D4EEF6;
+    margin: 0 1em 2em 0;
+    padding: 0 0.5em;
+    clear: both;
+}
+
+#priceFlash{
+    font-size: 2em;
+    margin-top: 0.2em;
+    padding-left: 0.5em;
+}
+#priceFlash.fade{
+    opacity: 0;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+#priceFlash.fade.in{
+    opacity: 1;
+  -webkit-transition: opacity 0.1s linear;
+  -moz-transition: opacity 0.1s linear;
+  -o-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+
+.resultPane h3 {
+    font-size: 20px;
+    text-align: right;
+}
+.counter {
+    font-size: 5em;
+    width: 90%;
+    text-align: left;
+    padding-left: 0.5em;
+    margin: auto;
+}
+
+.btn.down {
+   opacity: 0.5;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+
+.btn {
+   opacity: 1;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+#tabPane {
+    padding: 0 3em;
+}
+.tabPadding {
+    width: 60%;
+    padding: 1em;
+    background: aliceblue;
+    margin: 0 auto 1em auto;
+}
+#tabPane table {
+    margin: auto;
+    width: 90%;
+    background-color: aliceblue;
+    font-size: 1em;
+}
+#tabPane tr.subTotal {
+    border-top: 1px solid black;
+    border-bottom: 4px double black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#tabPane td {
+    padding: 0.2em;
+}
+#tabPane table td.price {
+    text-align: right;
+}
+#tabPane .tabButtons {
+    margin: 0.5em auto 0 auto;
+    text-align: center;
+}
+#confirmPane {
+    text-align: center;
+}
+#confirmPane button {
+    margin: 0 1em;
+}
