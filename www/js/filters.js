@@ -13,7 +13,7 @@ angular.module('neeTax.filters', [])
             return $sce.trustAsHtml(input);
         }
     }])
-    .filter("customCurrency", function (numberFilter) {
+    .filter("customCurrency", function(numberFilter) {
     function isNumeric(value) { return (!isNaN(parseFloat(value)) && isFinite(value)); }
 
     return function(inputNumber, currencySymbol, decimalSeparator, thousandsSeparator, decimalDigits) {
