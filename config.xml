@@ -1,7 +1,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="no.fredriksvensen.neetax" version="1.0.0">
   <name>NeeTax</name>
   <description>App for Redd Barna to visualize cost at birth</description>
-  <author href="http://www.fredriksvensen.no" email="bedrift@fredriksvensen.no">PhoneGap Team</author>
+  <author href="http://www.fredriksvensen.no" email="bedrift@fredriksvensen.no">Fredrik Svensen</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="landscape"/>
@@ -11,12 +11,9 @@
   <preference name="prerendered-icon" value="true"/>
   <preference name="stay-in-webview" value="false"/>
   <preference name="ios-statusbarstyle" value="black-opaque"/>
-  <preference name="detect-data-types" value="true"/>
-  <preference name="exit-on-suspend" value="false"/>
+  <preference name="detect-data-types" value="false"/>
   <preference name="show-splash-screen-spinner" value="true"/>
   <preference name="auto-hide-splash-screen" value="true"/>
-  <preference name="disable-cursor" value="false"/>
-  <preference name="android-minSdkVersion" value="7"/>
   <preference name="android-installLocation" value="auto"/>
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
